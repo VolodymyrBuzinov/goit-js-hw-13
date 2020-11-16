@@ -16,11 +16,7 @@ alert({
     })
 
 const newImagesService = new imagesApi();
-const onInputChange = function (evt) {
-    success({
-        title: 'Картинки по вашему запросу найдены!!!',
-        delay: 1500
-    })
+const onInputChange = function (evt) {    
     clearContainer();
     newImagesService.setDefaultPage();
     newImagesService.name = evt.target.value;    
@@ -31,6 +27,17 @@ document.addEventListener('input', debounce(onInputChange, 500));
 refs.gallery.addEventListener('click', onOpenModal);
 
 const renderingPage = function (data) { 
+    if (data.length === 0) {
+        error({
+        title: 'Картинки по вашему запросу не найдены!!!',
+        delay: 1500
+    })
+    } else {
+        success({
+        title: 'Картинки по вашему запросу найдены!!!',
+        delay: 1500
+    })
+    }
     refs.gallery.insertAdjacentHTML('beforeend', imageTemplate(data));
 }         
       
