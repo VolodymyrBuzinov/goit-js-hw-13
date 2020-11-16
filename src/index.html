@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Заголовок страницы</title>    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />    
+  </head>
+  <body>      
+    <!-- В этот список рендери разметку меню -->
+    <h1>Введите запрос по поиску картинок</h1>
+    <form class="search-form" id="search-form">
+      <input class="input js-input" type="text" name="query" autocomplete="off" placeholder="Поиск изображений..." />
+    </form>    
+    <ul class="container gallery js-gallery"></ul>    
+    <!-- Скрипт идёт последним в разметке. В нём уже подключен главный SASS-файл. -->
+    <script src="./index.js"></script>     
+    <script src="./js/main.js" type="module"></script>
+  </body>
+</html>
